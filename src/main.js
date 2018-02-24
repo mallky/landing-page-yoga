@@ -1,25 +1,19 @@
 import './style.less';
 import 'bootstrap';
-import { createElement } from '../utils/utils';
-import src from './images/1.jpg';
 import Navigation from './components/navigation/navigation';
+import Footer from './components/footer/footer';
+import Main from './components/main/main';
 
 class App {
   init () {
-    const imgOpt = {
-      tag: 'img',
-      className: 'my-img',
-      attr: {
-        'src': src,
-        'alt': 'my photo'
-      }
-    };
-    const img = createElement(imgOpt);
-
     this.root = document.getElementById('root');
-    this.root.appendChild(img.node);
     const navigation = new Navigation(this.root);
+    const footer = new Footer(this.root);
+    const main = new Main(this.root);
+
     navigation.init();
+    main.init();
+    footer.init();
   }
 }
 

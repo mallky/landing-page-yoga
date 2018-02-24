@@ -10,11 +10,5 @@ export default class Navigation {
   
   init() {
     this.root.appendChild(createComponent(navigation));
-
-    this.customizeLi();
-  }
-  
-  customizeLi() {
-    this.root.querySelector('li').classList.add('first-list');
   }
 };
