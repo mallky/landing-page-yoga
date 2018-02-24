@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="speakers">
+        <h2>Наши преподаватели</h2>
+
+        <% items.forEach(function(item, index) { %>
+        <% const extraClass1 = index !== 1 ? 'order-md-2' : '' %>
+        <% const extraClass2 = index !== 1 ? 'order-md-1' : '' %>
+        <div class="row featurette align-items-center">
+            <div class="col-md-7 <%-extraClass1%>">
+                <h2 class="featurette-heading"><%-item.alt%> <span class="text-muted">Инструктор по йоге.</span></h2>
+                <p class="lead"><%-item.description%></p>
+            </div>
+            <div class="col-md-5 <%-extraClass2%>">
+                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" style="width: 500px; height: auto;" src="<%-item.src%>" alt="<%-item.alt%>" data-holder-rendered="true">
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <% }); %>
+    </div>
+</div>

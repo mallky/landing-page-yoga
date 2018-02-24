@@ -3,6 +3,7 @@ import './main.less';
 import _ from 'lodash';
 import { createComponent } from '../../../utils/utils';
 import Contact from '../contact/contact';
+import Speakers from '../speakers/speakers';
 
 const main = require('./main.html');
 
@@ -17,6 +18,9 @@ export default class Main {
     this.root.appendChild(_main);
     
     const contact = new Contact(_main);
+    const speakers = new Speakers(_main);
+
+    speakers.init();
     contact.init();
   }
 }
