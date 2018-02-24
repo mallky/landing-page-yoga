@@ -1,38 +1,32 @@
 import './style.less';
 import 'bootstrap';
-import _ from 'lodash';
-import $ from 'jquery';
-import printMe from './print.js';
-import image from './1.jpg';
+import { createElement } from '../utils/utils';
+import src from './images/1.jpg';
+import Navigation from './components/navigation/navigation';
 
-const component = () => {
-  let element = document.createElement('div');
-  let btn = document.createElement('button');
-  const img = document.createElement('img');
+class App {
+  init () {
+    const imgOpt = {
+      tag: 'img',
+      className: 'my-img',
+      attr: {
+        'src': src,
+        'alt': 'my photo'
+      }
+    };
+    const img = createElement(imgOpt);
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
-  $(btn).addClass('btn btn-primary btn-sm');
-
-  img.src = image;
-  
-  element.appendChild(btn);
-  element.appendChild(img);
-
-  return element;
-};
-
-document.body.appendChild(component());
-
-if (process.env.NODE_ENV !== 'production') {
-  console.log('Looks like we are in development mode!');
+    this.root = document.getElementById('root');
+    this.root.appendChild(img.node);
+    const navigation = new Navigation(this.root);
+    navigation.init();
+  }
 }
 
-if (module.hot) {   
-  module.hot.accept('./print.js', function() {
-    console.log('Accepting the updated printMe module!');
-    printMe();
-  })
+const app = new App();
+
+app.init();
+
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Dev mode On!');
 }
