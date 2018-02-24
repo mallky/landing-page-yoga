@@ -1,6 +1,5 @@
 import './navigation.less';
-import { createComponent } from '../../../utils/utils';
-import $ from 'jquery';
+import { createComponent, scroll } from '../../../utils/utils';
 
 const navigation = require('./navigation.html');
 
@@ -16,13 +15,6 @@ export default class Navigation {
   }
 
   onLinkClick () {
-    $('#navbar-example').on('click', 'a', function (event) {
-      event.preventDefault();
-
-      const id  = $(this).attr('href');
-      const top = $(id).offset().top;
-
-      $('html').animate({scrollTop: top}, 1000);
-    });
+    scroll('#navbar-example');
   }
 };

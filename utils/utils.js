@@ -37,8 +37,20 @@ const toJSON = function (form) {
   return JSON.stringify(obj);
 };
 
+const scroll = (parent) => {
+  $(parent).on('click', 'a', function (event) {
+    event.preventDefault();
+
+    const id  = $(this).attr('href');
+    const top = $(id).offset().top;
+
+    $('html').animate({scrollTop: top}, 1000);
+  });
+};
+
 export {
   createElement,
   createComponent,
-  toJSON
+  toJSON,
+  scroll
 };

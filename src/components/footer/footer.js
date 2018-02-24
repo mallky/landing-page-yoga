@@ -1,6 +1,6 @@
 import './footer.less';
 import _ from 'lodash';
-import { createComponent } from '../../../utils/utils';
+import { createComponent, scroll } from '../../../utils/utils';
 
 const footer = require('./footer.html');
 
@@ -13,5 +13,10 @@ export default class Footer {
     const _footer = _.template(footer)({item: 'item'});
 
     this.root.appendChild(createComponent(_footer));
+    this.onBackToTop();
+  }
+
+  onBackToTop () {
+    scroll('footer');
   }
 }
