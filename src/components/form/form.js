@@ -1,7 +1,9 @@
+import './form.less';
 import _ from 'lodash';
+import $ from 'jquery';
 import { createComponent, toJSON } from '../../../utils/utils';
 
-const contact = require('./contact.html');
+const contact = require('./form.html');
 
 export default class Contact {
   constructor (root) {
@@ -14,6 +16,16 @@ export default class Contact {
     this.root.appendChild(createComponent(_contact));
 
     this.validateForm();
+
+    const agreement = this.root.querySelector('#agreement');
+
+    agreement.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const newWin = window.open("about:blank", "hello");
+
+      newWin.document.write(require('../../../agreement/agreement.html'));
+    }, false);
   }
 
   validateForm () {
@@ -35,9 +47,13 @@ export default class Contact {
           xhr.onload = () => {
             if (xhr.status === 200) {
               console.log('DONE');
+              $('#exampleModalCenter').modal('hide');
+              $('#done').modal('show');
             }
             if (xhr.status !== 200) {
               console.log('MISTAKE');
+              $('#exampleModalCenter').modal('hide');
+              $('#fail').modal('show');
             }
           };
 

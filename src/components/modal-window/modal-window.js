@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { createComponent } from '../../../utils/utils';
-import Contact from '../contact/contact';
+import Contact from '../form/form';
 
 const modalWindow = require('./modal-window.html');
 
@@ -13,8 +13,9 @@ export default class ModalWindow {
     const _modalWindow = _.template(modalWindow)();
 
     this.root.appendChild(createComponent(_modalWindow));
-    
-    const _form = new Contact(this.root.querySelector('.modal-body'));
+    this.modalBody = this.root.querySelector('.modal-body');
+
+    const _form = new Contact(this.modalBody);
     _form.init();
   }
 }
