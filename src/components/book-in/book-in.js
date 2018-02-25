@@ -16,7 +16,7 @@ export default class BookIn {
     this.root.appendChild(createComponent(_bookIn));
 
     $('.book-in-modal-btn-wrapper').find('button').click(() => {
-      $('[data-target="#exampleModalCenter"]').click();
+      $('#exampleModalCenter').modal('show');
     });
   }
 }
