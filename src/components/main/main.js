@@ -6,6 +6,7 @@ import Speakers from '../speakers/speakers';
 import ModalWindow from '../modal-window/modal-window';
 import DoneModalWindow from '../send-done/send-done';
 import FailModalWindow from '../send-failed/send-fail';
+import BookIn from '../book-in/book-in';
 
 const main = require('./main.html');
 
@@ -23,10 +24,12 @@ export default class Main {
     const modalWindow = new ModalWindow(this.root.querySelector('.modal-btn-wrapper'));
     const doneModalWindow = new DoneModalWindow(this.root.querySelector('.done-btn-wrapper'));
     const failModalWindow = new FailModalWindow(this.root.querySelector('.fail-btn-wrapper'));
+    const bookIn = new BookIn(_main);
 
     speakers.init();
     modalWindow.init();
     doneModalWindow.init();
     failModalWindow.init();
+    bookIn.init();
   }
 }
