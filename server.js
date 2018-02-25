@@ -10,8 +10,10 @@ app.use(express.static(__dirname + '/dist'));
 app.post('/telegram', jsonParser, function (req, res) {
   const reqBody = req.body;
   const fields = [
-    '<strong>Name</strong>: ' + reqBody.name,
+    '<strong>Имя</strong>: ' + reqBody.name,
     '<strong>Email</strong>: ' + reqBody.email,
+    '<strong>Телефон</strong>: ' + reqBody.phone,
+    '<strong>Узнали</strong>: ' + reqBody.whom,
     reqBody.text
   ];
   
