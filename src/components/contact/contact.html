@@ -1,5 +1,5 @@
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" id="contacts">
-    <div class="container">
+    <div class="container-fluid">
         <p>Вы можете забронировать место используя форму ниже. Мы вам обязательно ответим.</p>
         <form class="needs-validation" novalidate>
             <div class="form-group row">
@@ -24,20 +24,42 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label" for="formControlTextarea1">Комментарий</label>
+                <label class="col-sm-3 col-form-label">Телефон</label>
                 <div class="col-sm-9">
-                    <textarea class="form-control" id="formControlTextarea1" name="text" rows="3" required></textarea>
-                    <div class="valid-feedback">
-                        Спасибо за ваш комментарий!
+                    <input type="tel" class="form-control" id="inputPhone3" name="phone" pattern="[0-9]{11}" placeholder="Телефон" required>
+                    <div class="invalid-feedback">
+                        Пожалуйста, вводите номер телефона в следующем формате: <strong>XXXXXXXXXXX</strong>.
                     </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3" for="exampleFormControlSelect1">Как вы о нас узнали?</label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="exampleFormControlSelect1" required>
+                        <option>От друзей</option>
+                        <option>Реклама в контакте</option>
+                        <option>Я телепат</option>
+                        <option>И экстрасенс</option>
+                        <option>И вообще</option>
+                    </select>
                     <div class="invalid-feedback">
                         Пожалуйста, вводите корректную информацию.
                     </div>
                 </div>
             </div>
             <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="formControlTextarea1">Комментарий</label>
+                <div class="col-sm-9">
+                    <textarea class="form-control" id="formControlTextarea1" style="resize: none" name="text" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <input type="checkbox" class="form-check-input form-check" id="exampleCheck1" required>
+                <label class="form-check-label" for="exampleCheck1">Я согласен на обработку персональных данных</label>
+            </div>
+            <div class="form-group row">
                 <div class="col-sm-12">
-                    <button type="submit" class="btn btn-dark btn-block">Submit</button>
+                    <button type="submit" class="btn btn-dark btn-block">Зарегистрироваться</button>
                 </div>
             </div>
         </form>
