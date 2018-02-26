@@ -1,8 +1,9 @@
 import './style.less';
 import 'bootstrap';
-import Navigation from './components/navigation/navigation';
-import Footer from './components/footer/footer';
-import Main from './components/main/main';
+import $ from 'jquery';
+import Navigation from './wrappers/navigation/navigation';
+import Footer from './wrappers/footer/footer';
+import Main from './wrappers/main/main';
 
 class App {
   init () {
@@ -14,6 +15,8 @@ class App {
     navigation.init();
     main.init();
     footer.init();
+    
+    $('#mymap').append($('#mymap-body'));
   }
 }
 
