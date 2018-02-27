@@ -13,7 +13,7 @@ const main = require('./main.html');
 
 export default class Main {
   constructor (root) {
-    this.root = root;
+    this.root = root; 
   }
   
   init () {
