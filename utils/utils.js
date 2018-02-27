@@ -50,9 +50,18 @@ const scroll = (parent) => {
   });
 };
 
+class Column {
+  constructor (root) {
+    this.root = root;
+  }
+  
+  
+}
+
 export {
   createElement,
   createComponent,
   toJSON,
-  scroll
+  scroll,
+  Column
 };

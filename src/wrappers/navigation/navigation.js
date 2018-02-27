@@ -1,13 +1,9 @@
 import './navigation.less';
-import { createComponent, scroll } from '../../../utils/utils';
+import { createComponent, scroll, Column } from '../../../utils/utils';
 
 const navigation = require('./navigation.html');
 
-export default class Navigation {
-  constructor (root) {
-    this.root = root;
-  }
-  
+export default class Navigation extends Column {
   init() {
     this.root.appendChild(createComponent(navigation));
 
