@@ -51,6 +51,46 @@ const scroll = (parent) => {
   });
 };
 
+const chooseAnimation = (i) => {
+  switch (i) {
+    case 0:
+      return 'bounceInDown';
+    case 1:
+      return 'zoomInLeft';
+    case 2:
+      return 'zoomIn';
+    case 3:
+      return 'zoomInRight';
+    case 4:
+      return 'flipInX';
+    case 5:
+      return 'fadeInLeft';
+    case 6:
+      return 'fadeInRight';
+    default:
+      return 'bounceInUp';
+  }
+};
+
+const animateWhenVisible = () => {
+  const $animItems = $('.animated');
+
+  $animItems.addClass('invisible');
+
+  $(document).scroll(() => {
+    $animItems.each((i, item) => {
+      const itemPosData = item.getBoundingClientRect();
+      const top = itemPosData.top;
+      const bottom = itemPosData.bottom;
+      const height = itemPosData.height;
+      const isVisible = (top + height >= 0) && (height + window.innerHeight >= bottom + 150);
+      const animation = chooseAnimation(i);
+
+      isVisible && $(item).removeClass('invisible').addClass(animation);
+    });
+  });
+};
+
 class Column {
   constructor (root) {
     this.root = root;
@@ -60,6 +100,7 @@ class Column {
     const _component = _.template(component)(opt);
     
     this.root.appendChild(createComponent(_component));
+    animateWhenVisible();
   }
 }
 
