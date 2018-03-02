@@ -3,12 +3,12 @@ import _ from 'lodash';
 import { createComponent, scroll, Column } from '../../../utils/utils';
 
 const footer = require('./footer.html');
+const opt = {item: 'item'};
 
 export default class Footer extends Column {
   init () {
-    const _footer = _.template(footer)({item: 'item'});
+    super.init(footer, opt);
 
-    this.root.appendChild(createComponent(_footer));
     this.onBackToTop();
   }
 

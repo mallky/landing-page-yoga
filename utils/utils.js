@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import _ from 'lodash';
 
 const createElement = (option) => {
   const {tag, className, attr} = option;
@@ -55,7 +56,11 @@ class Column {
     this.root = root;
   }
   
-  
+  init (component, opt = {}) {
+    const _component = _.template(component)(opt);
+    
+    this.root.appendChild(createComponent(_component));
+  }
 }
 
 export {

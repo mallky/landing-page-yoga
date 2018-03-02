@@ -1,19 +1,12 @@
 import './form.less';
-import _ from 'lodash';
 import $ from 'jquery';
-import { createComponent, toJSON } from '../../../utils/utils';
+import { toJSON, Column } from '../../../utils/utils';
 
 const contact = require('./form.html');
 
-export default class Contact {
-  constructor (root) {
-    this.root = root;
-  }
-
+export default class Contact extends Column {
   init () {
-    const _contact = _.template(contact)();
-
-    this.root.appendChild(createComponent(_contact));
+    super.init(contact);
 
     this.validateForm();
 

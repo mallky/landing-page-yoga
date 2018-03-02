@@ -1,8 +1,18 @@
 #book-place {
-  background: url("../../../images/bg3.jpg") 50% 30% no-repeat;
+  &::after {
+    content: "";
+    background: url("../../../images/bg3.jpg") 50% 30% no-repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
 
   ul {
-    list-style-type: circle;
+    list-style-type: none;
     margin: 3em;
 
     li {
