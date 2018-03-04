@@ -1,15 +1,15 @@
-import './book-in.less';
+import './tickets.less';
 import $ from 'jquery';
 import { Column } from '../../../utils/utils';
 
-const bookIn = require('./book-in.html');
+const tickets = require('./tickets.html');
 
-export default class BookIn extends Column {
-  init () {
-    super.init(bookIn);
+export default class Tickets extends Column {
+  init() {
+    super.init(tickets);
 
     $('.book-in-modal-btn-wrapper').find('button').click(() => {
       $('#exampleModalCenter').modal('show');
     });
   }
-}
+};

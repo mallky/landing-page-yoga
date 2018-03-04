@@ -1,4 +1,4 @@
-#book-place {
+#for-who {
   &::after {
     content: "";
     background: url("../../../images/bg3.jpg") 50% 30% no-repeat;
@@ -11,17 +11,17 @@
     z-index: -1;
   }
 
-  ul {
-    list-style-type: none;
-    margin: 3em;
-
-    li {
+  .custom-list {
+    & > div {
       font-size: 22px;
       font-weight: bold;
-    }
-  }
+      margin: 1em;
 
-  .book-in-modal-btn-wrapper {
-    margin: 3em;
+      &::before {
+        content: '•';
+        color: black;
+        margin-right: 0.2em;
+      }
+    }
   }
 }

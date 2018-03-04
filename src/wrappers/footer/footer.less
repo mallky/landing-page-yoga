@@ -9,18 +9,17 @@ footer {
       }
     }
   }
-  div {
+  & > div {
     font-size: 0.8em;
-    p {
-      &:nth-child(2) {
-        span {
-          text-align: center;
-          display: block;
-          span {
-            white-space: nowrap;
-          }
-        }
-      }
+
+    & > div {
+      font-size: 0.9em;
+    }
+  }
+
+  button {
+    .black {
+      color: #000;
     }
   }
 }

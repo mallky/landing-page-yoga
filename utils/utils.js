@@ -64,8 +64,10 @@ const chooseAnimation = (i) => {
     case 4:
       return 'flipInX';
     case 5:
-      return 'fadeInLeft';
+      return 'zoomIn';
     case 6:
+      return 'fadeInLeft';
+    case 7:
       return 'fadeInRight';
     default:
       return 'bounceInUp';
