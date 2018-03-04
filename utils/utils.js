@@ -56,18 +56,30 @@ const chooseAnimation = (i) => {
     case 0:
       return 'bounceInDown';
     case 1:
-      return 'zoomInLeft';
-    case 2:
-      return 'zoomIn';
     case 3:
-      return 'zoomInRight';
-    case 4:
-      return 'flipInX';
-    case 5:
-      return 'zoomIn';
-    case 6:
       return 'fadeInLeft';
+    case 2:
+    case 4:
+      return 'fadeInRight';
+    case 5:
+      return 'fadeIn';
+    case 6:
+    case 8:
+    case 10:
+      return 'zoomInLeft';
     case 7:
+    case 9:
+    case 11:
+      return 'zoomInRight';
+    case 12:
+      return 'flipInX';
+    case 13:
+      return 'zoomIn';
+    case 14:
+      return 'fadeIn';
+    case 15:
+      return 'fadeInLeft';
+    case 16:
       return 'fadeInRight';
     default:
       return 'bounceInUp';
@@ -102,13 +114,13 @@ class Column {
     const _component = _.template(component)(opt);
     
     this.root.appendChild(createComponent(_component));
-    animateWhenVisible();
   }
 }
 
 export {
   createElement,
   createComponent,
+  animateWhenVisible,
   toJSON,
   scroll,
   Column

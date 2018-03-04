@@ -10,20 +10,44 @@
   }
 
   .speakers {
+    text-align: center;
+    hr {
+      margin: 5rem 0;
+      border-top: 1px solid white;
+      width: 70%;
+      display: inline-block;
+      text-align: right;
 
-    .col-lg-4 {
-      margin-bottom: 1.5rem;
-      text-align: center;
+      &:first-child {
+        display: none;
+      }
 
-      p {
-        margin-right: .75rem;
-        margin-left: .75rem;
+      &:last-of-type {
+        & + div {
+          padding-bottom: 3rem;
+        }
+      }
+    }
+
+    & > .teacher {
+      &:nth-child(4) {
+        flex-direction: row-reverse;
       }
     }
   }
 }
 
-@media (min-width: 40em) {
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 4rem;
+  }
+}
+@media (min-width: 52em) {
+  .featurette-heading {
+    margin-top: 1rem;
+  }
+}
+@media (min-width: 45em) {
   .featurette-heading {
     font-size: 50px;
   }

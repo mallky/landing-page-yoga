@@ -1,11 +1,16 @@
 <div class="container-fluid bg-dark text-white" id="speakers">
-    <h2>Наши преподаватели</h2>
-    <div class="speakers row">
+    <h2 class="animated">Наши преподаватели</h2>
+    <div class="speakers">
         <% items.forEach(function(item, index) { %>
-        <div class="col-lg-4 animated">
-            <img class="rounded-circle" src="<%-item.src%>" alt="<%-item.alt%>" width="300" height="300">
-            <h2><%-item.alt%></h2>
-            <p><%-item.description%></p>
+        <hr class="featurette-divider">
+        <div class="row justify-content-around teacher">
+            <div class="col-md-7 p-md-5 animated">
+                <h2 class="featurette-heading text-center"><%-item.alt%></h2>
+                <p class="lead text-center"><%-item.description%></p>
+            </div>
+            <div class="col-md-5 d-flex justify-content-center align-items-center animated">
+                <img class="featurette-image img-fluid mx-auto rounded-circle" src="<%-item.src%>" alt="<%-item.alt%>" style="width: 500px; height: auto;" data-holder-rendered="true">
+            </div>
         </div>
         <% }); %>
     </div>
