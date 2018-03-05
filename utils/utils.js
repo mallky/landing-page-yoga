@@ -47,7 +47,7 @@ const scroll = (parent) => {
     const id  = $(this).attr('href');
     const top = $(id).offset().top;
 
-    $('html').animate({scrollTop: top}, 1000);
+    $('body, html').animate({scrollTop: top}, 1000);
   });
 };
 
