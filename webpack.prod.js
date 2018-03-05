@@ -6,6 +6,10 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
   devtool: 'source-map',
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      children: true,
+      async: true
+    }),
     new UglifyJSPlugin({
       sourceMap: true
     }),
