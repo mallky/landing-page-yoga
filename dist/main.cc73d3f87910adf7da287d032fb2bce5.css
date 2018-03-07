@@ -2367,13 +2367,6 @@
   -webkit-box-flex: 1;
   flex: 1;
 }
-@media (min-width: 768px) {
-  .flex-md-equal > * {
-    -ms-flex: 1;
-    -webkit-box-flex: 1;
-    flex: 1;
-  }
-}
 .overflow-hidden {
   overflow: hidden;
 }
@@ -2381,12 +2374,27 @@
   animation-duration: 2s;
   animation-name: fade;
 }
+#root a {
+  text-decoration: underline !important;
+}
 @keyframes fade {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1;
+  }
+}
+@media (max-width: 380px) {
+  .display-4 {
+    font-size: 40px;
   }
 }
 .phone span {
@@ -2433,9 +2441,6 @@ footer .mk-ctcts {
 footer button .black {
   color: #000;
 }
-main {
-  margin-top: 5rem;
-}
 main > div#tour {
   background-color: transparent;
 }
@@ -2448,7 +2453,7 @@ main div ul li button {
   color: black !important;
 }
 main #about {
-  background: url(images/80721b7570d73e313fddb677dfc84836.jpg) 48% 60% no-repeat;
+  background: url(images/693d265efe961a075c6949887b17b394.jpg) 48% 60% no-repeat;
 }
 main #event .display-4 {
   font-size: 3rem;
@@ -2556,5 +2561,3 @@ main li [data-toggle="collapse"] {
 #tickets .ticket-cost {
   font-size: 1.5em;
 }
-
-/*# sourceMappingURL=main.678361999c3199ae3fae27fc682df886.css.map*/

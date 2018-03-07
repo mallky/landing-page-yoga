@@ -17,6 +17,8 @@ class App {
     footer.init();
     
     $('#mymap').append($('#mymap-body'));
+
+    $(document.head).append('<link rel="shortcut icon" href="/images/logo2.jpg" type="image/jpg">');
   }
 }
 

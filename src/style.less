@@ -17,6 +17,24 @@
     flex: 1;
 }
 
+.overflow-hidden { overflow: hidden; }
+
+#root {
+    .custom-animated {
+        animation-duration: 2s;
+        animation-name: fade;
+    }
+
+    a {
+        text-decoration: underline !important;
+    }
+}
+
+@keyframes fade {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
 @media (min-width: 768px) {
     .flex-md-equal > * {
         -ms-flex: 1;
@@ -25,16 +43,8 @@
     }
 }
 
-.overflow-hidden { overflow: hidden; }
-
-#root {
-    .custom-animated {
-        animation-duration: 2s;
-        animation-name: fade;
+@media (max-width: 380px) {
+    .display-4 {
+        font-size: 40px;
     }
-}
-
-@keyframes fade {
-    0% {opacity: 0}
-    100% {opacity: 1}
 }
